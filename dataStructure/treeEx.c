@@ -50,6 +50,7 @@ void postorde(TreeNode *root) {
         printf("[%d] ", root->data); 
     }
 }
+
 int main(void)
 {
     printf("중위 순회=");
