@@ -46,23 +46,48 @@ void inorder(TreeNode *root) {
         inorder(root->right);
     }
 }
-// 전위 순회 VLR
-void preorde(TreeNode *root) {
-    if (root != NULL) {
-        printf("[%d] ", root->key);
-        preorde(root->left);
-        preorde(root->right);
+
+TreeNode *min_value_node(TreeNode *node){
+    TreeNode *current = node;
+    while (current->left != NULL) { // 가장 작은 값 찾기
+        current = current->left;
     }
+    return current;
 }
 
-// 후위 순회 LRV
-void postorde(TreeNode *root) {
-    if (root != NULL) {
-        postorde(root->left);
-        postorde(root->right);
-        printf("[%d] ", root->key);
+TreeNode *delete_node(TreeNode *root, int key){
+    if(root == NULL) return root; // 비워져있는 상태
+    
+    if(root->key > key){ // 찾으려는 값이 루트의 값보다 작다면
+        root->left = delete_node(root->left, key);
     }
+    else if (root->key < key){
+        root->right = delete_node(root->right, key);
+    }else{ // 삭제 값 찾음
+        // 차수가 0인 경우, 1인 경우
+        if(root->left == NULL){ // 오른쪽 자식 없는지 확인 안함
+            TreeNode *temp = root->right;
+            free(root);
+            return temp; // 오른쪽 자식을 리턴해서 부모에게 넣어주려고
+        }
+        else if (root->right == NULL){
+            TreeNode *temp = root->left;
+            free(root);
+            return temp;
+        }
+        // 차수가 2인 경우
+        TreeNode *temp = min_value_node(root->right);
+        // 오른쪽에 있는것 중 가장 작은값 주소
+        root->key = temp->key; // 루트에 값 복사
+        root->right = delete_node(root->right, temp->key);
+    }
+    return root;
 }
+
+//       30
+//   20      40
+// 10          50
+//           45  60
 
 int main(void){
     TreeNode *root = NULL;
@@ -71,8 +96,13 @@ int main(void){
     root = insert_node(root,40); // (30의 주소, 40)
     root = insert_node(root,10); // (30의 주소, 10)
     root = insert_node(root,50);
+    root = insert_node(root,60);
+    root = insert_node(root,45);
     
     inorder(root);  printf("\n");
-    preorde(root);  printf("\n");
-    postorde(root); printf("\n");
+    
+    root = delete_node(root,10); // 10삭제
+    root = delete_node(root,40); // 40삭제
+    root = delete_node(root,50); // 50삭제
+    
 }
