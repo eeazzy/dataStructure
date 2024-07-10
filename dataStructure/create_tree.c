@@ -102,7 +102,10 @@ int main(void){
     inorder(root);  printf("\n");
     
     root = delete_node(root,10); // 10삭제
+    printf("10삭제 : "); inorder(root);  printf("\n");
     root = delete_node(root,40); // 40삭제
+    printf("40삭제 : "); inorder(root);  printf("\n");
     root = delete_node(root,50); // 50삭제
+    printf("50삭제 : ");inorder(root);  printf("\n");
     
 }
