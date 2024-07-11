@@ -14,8 +14,7 @@ typedef struct ListNode {
     struct ListNode *link;
 } ListNode;
 
-void print_list(ListNode* head)
-{
+void print_list(ListNode* head){
     ListNode* p;
 
     if (head == NULL) return;
@@ -27,8 +26,7 @@ void print_list(ListNode* head)
     printf("%d->", p->data);
 }
 
-ListNode* insert_first(ListNode* head, element data)
-{
+ListNode* insert_first(ListNode* head, element data){
     ListNode *node = (ListNode *)malloc(sizeof(ListNode));
     node->data = data;
     if (head == NULL) {
@@ -42,8 +40,7 @@ ListNode* insert_first(ListNode* head, element data)
     return head;
 }
 
-ListNode* insert_last(ListNode* head, element data)
-{
+ListNode* insert_last(ListNode* head, element data){
     ListNode *node = (ListNode *)malloc(sizeof(ListNode));
     node->data = data;
     if (head == NULL) {
