@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		701B0AF32C3CDE34009C4705 /* create_tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 701B0AF22C3CDE34009C4705 /* create_tree.c */; };
+		701353FD2C401A9500BCA510 /* data_size.c in Sources */ = {isa = PBXBuildFile; fileRef = 701353FC2C401A9500BCA510 /* data_size.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +27,7 @@
 		70024DB22C2A644B00CC1C3A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		70024DBA2C2A6A2500CC1C3A /* no2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = no2.c; sourceTree = "<group>"; };
 		70024DBD2C2A717B00CC1C3A /* stack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stack.c; sourceTree = "<group>"; };
+		701353FC2C401A9500BCA510 /* data_size.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = data_size.c; sourceTree = "<group>"; };
 		701B0AF02C3CD950009C4705 /* treeEx.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = treeEx.c; sourceTree = "<group>"; };
 		701B0AF22C3CDE34009C4705 /* create_tree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = create_tree.c; sourceTree = "<group>"; };
 		702CEE9B2C37D472000A7136 /* linked_stack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = linked_stack.c; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 				70A5D18F2C38184F0045C0AF /* list_circle.c */,
 				701B0AF02C3CD950009C4705 /* treeEx.c */,
 				701B0AF22C3CDE34009C4705 /* create_tree.c */,
+				701353FC2C401A9500BCA510 /* data_size.c */,
 			);
 			path = dataStructure;
 			sourceTree = "<group>";
@@ -147,7 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				701B0AF32C3CDE34009C4705 /* create_tree.c in Sources */,
+				701353FD2C401A9500BCA510 /* data_size.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
