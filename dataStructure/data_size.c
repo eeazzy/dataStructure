@@ -22,6 +22,31 @@ int calc_dir_size(TreeNode *root){
     return (root->data + left_size + right_size);
 }
 
+int get_node_count(TreeNode *node){
+    int count = 0;
+
+    if (node != NULL)
+        count = 1 + get_node_count(node->left) +
+        get_node_count(node->right);
+
+    return count;
+}
+
+int max(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+int get_height(TreeNode *node){
+    int height = 0;
+
+    if (node != NULL)
+        height = 1 + max(get_height(node->left),
+            get_height(node->right));
+
+    return height;
+}
+
+
 int main(void){
     TreeNode n6 = { 30, NULL, NULL };
     TreeNode n4 = { 300, &n6, NULL };
@@ -31,5 +56,8 @@ int main(void){
     TreeNode n1 = { 0, &n2, &n3 };
 
     printf("디렉토리의 크기 = %d\n", calc_dir_size(&n1));
+    printf("노드의 수 = %d\n", get_node_count(&n1));
+    printf("높이 = %d\n", get_height(&n1));
+    
 }
 
